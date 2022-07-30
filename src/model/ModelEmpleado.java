@@ -28,7 +28,6 @@ public class ModelEmpleado extends dbData{
                     case 0 -> empleado = new Empleado(idEmpleado,nombre, apellido, horasExtras, false, salario, cedula);
                     default -> throw new AssertionError();
             }  
-            mostrarDatos(empleado); 
             } 
             stmt.close();
             resultado.close();
@@ -61,7 +60,6 @@ public class ModelEmpleado extends dbData{
                     case 0 -> empleado = new Empleado(idEmpleado,nombre, apellido, horasExtras, false, salario, cedula);
                     default -> throw new AssertionError();
             }  
-            mostrarDatos(empleado); 
             }
             stmt.close();
             resultado.close();
@@ -181,7 +179,6 @@ public class ModelEmpleado extends dbData{
                     case 0 -> empleado = new Empleado(idEmpleado,nombre, apellido, horasExtras, false, salario, cedula);
                     default -> throw new AssertionError();
             }  
-            mostrarDatos(empleado);
             empleadoLista.add(empleado);  
             }
             stmt.close();

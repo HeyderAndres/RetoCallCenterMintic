@@ -55,6 +55,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jButtonConsultar = new javax.swing.JButton();
         jLabelCedula = new javax.swing.JLabel();
         jTextFieldCedula = new javax.swing.JTextField();
+        jButtonLimpiarCampos = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabelInfoNomina = new javax.swing.JLabel();
@@ -114,6 +115,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jButtonConsultarEditar = new javax.swing.JButton();
         jLabelCedulaEditar = new javax.swing.JLabel();
         jTextFieldCedulaEditar = new javax.swing.JTextField();
+        jButtonLimpiarCamposEditar = new javax.swing.JButton();
         jPanel14 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -207,8 +209,15 @@ public class frmPrincipal extends javax.swing.JFrame {
         jLabelCedula.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabelCedula.setText("Cedula:");
 
-        jTextFieldCedula.setEditable(false);
         jTextFieldCedula.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButtonLimpiarCampos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonLimpiarCampos.setText("Limpiar campos");
+        jButtonLimpiarCampos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLimpiarCamposActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelInfoEmpleadoLayout = new javax.swing.GroupLayout(jPanelInfoEmpleado);
         jPanelInfoEmpleado.setLayout(jPanelInfoEmpleadoLayout);
@@ -224,14 +233,16 @@ public class frmPrincipal extends javax.swing.JFrame {
                         .addComponent(jLabelCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                         .addComponent(jLabelCedula)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanelInfoEmpleadoLayout.createSequentialGroup()
-                .addGap(267, 267, 267)
+                .addGap(207, 207, 207)
                 .addComponent(jButtonConsultar)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonLimpiarCampos)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelInfoEmpleadoLayout.setVerticalGroup(
@@ -246,7 +257,9 @@ public class frmPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabelCedula)
                     .addComponent(jTextFieldCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonConsultar)
+                .addGroup(jPanelInfoEmpleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonConsultar)
+                    .addComponent(jButtonLimpiarCampos))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -724,7 +737,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonGuardarCambios)
-                .addGap(152, 152, 152))
+                .addGap(242, 242, 242))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -777,6 +790,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jTextFieldCodigoEditar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        jButtonConsultarEditar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButtonConsultarEditar.setText("consultar");
         jButtonConsultarEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -787,6 +801,14 @@ public class frmPrincipal extends javax.swing.JFrame {
         jLabelCedulaEditar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabelCedulaEditar.setText("Cedula:");
 
+        jButtonLimpiarCamposEditar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonLimpiarCamposEditar.setText("Limpiar campos");
+        jButtonLimpiarCamposEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLimpiarCamposEditarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelInfoEmpleado1Layout = new javax.swing.GroupLayout(jPanelInfoEmpleado1);
         jPanelInfoEmpleado1.setLayout(jPanelInfoEmpleado1Layout);
         jPanelInfoEmpleado1Layout.setHorizontalGroup(
@@ -794,23 +816,29 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(jPanelInfoEmpleado1Layout.createSequentialGroup()
                 .addGroup(jPanelInfoEmpleado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelInfoEmpleado1Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabelCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldCodigoEditar, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelCedulaEditar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldCedulaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelInfoEmpleado1Layout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addComponent(jLabel6)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInfoEmpleado1Layout.createSequentialGroup()
                         .addGroup(jPanelInfoEmpleado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelInfoEmpleado1Layout.createSequentialGroup()
-                                .addGap(171, 171, 171)
-                                .addComponent(jButtonConsultarEditar))
+                                .addGap(17, 17, 17)
+                                .addComponent(jLabelCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldCodigoEditar)
+                                .addGap(18, 18, 18))
                             .addGroup(jPanelInfoEmpleado1Layout.createSequentialGroup()
-                                .addGap(238, 238, 238)
-                                .addComponent(jLabel6)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(171, 171, 171)
+                                .addComponent(jButtonConsultarEditar)
+                                .addGap(20, 20, 20)))
+                        .addGroup(jPanelInfoEmpleado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelInfoEmpleado1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jButtonLimpiarCamposEditar))
+                            .addGroup(jPanelInfoEmpleado1Layout.createSequentialGroup()
+                                .addComponent(jLabelCedulaEditar)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldCedulaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         jPanelInfoEmpleado1Layout.setVerticalGroup(
@@ -826,7 +854,9 @@ public class frmPrincipal extends javax.swing.JFrame {
                         .addComponent(jLabelCodigo1)
                         .addComponent(jTextFieldCodigoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(12, 12, 12)
-                .addComponent(jButtonConsultarEditar)
+                .addGroup(jPanelInfoEmpleado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonConsultarEditar)
+                    .addComponent(jButtonLimpiarCamposEditar))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -1055,7 +1085,12 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     private void jButtonConsultarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarEditarActionPerformed
         // TODO add your handling code here:
-        empleado = modelEmpleado.consultaEmpleadoId(jTextFieldCodigoEditar.getText());
+         if (jTextFieldCodigoEditar.getText().equals("")) {
+           empleado = modelEmpleado.validarCedula(jTextFieldCedulaEditar.getText());
+        }else
+            if (jTextFieldCedulaEditar.getText().equals("")) {
+            empleado = modelEmpleado.consultaEmpleadoId(jTextFieldCodigoEditar.getText());
+        }
         if (empleado == null) {
             JOptionPane.showMessageDialog(rootPane, "empleado no registrado");
             jTextFieldNombreEditar.setText("");
@@ -1064,6 +1099,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             jTextFieldHoraExtraEditar.setText("");
             jCheckBoxAuxilioTransporteEditar.setSelected(false);
         }else{
+            jTextFieldCodigoEditar.setText(empleado.getId());
             jTextFieldNombreEditar.setText(empleado.getNombre());
             jTextFieldApellidoEditar.setText(empleado.getApellido());
             jTextFieldSalarioEditar.setText(String.valueOf(empleado.getSalario()));
@@ -1170,7 +1206,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     private void jButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarActionPerformed
         // TODO add your handling code here:
-        empleado = modelEmpleado.consultaEmpleadoId(jTextFieldCodigo.getText());
+        
+
+       if (jTextFieldCodigo.getText().equals("")) {
+           empleado = modelEmpleado.validarCedula(jTextFieldCedula.getText());
+        }else
+            if (jTextFieldCedula.getText().equals("")) {
+            empleado = modelEmpleado.consultaEmpleadoId(jTextFieldCodigo.getText());
+        }
+        
         if (empleado == null) {
             JOptionPane.showMessageDialog(rootPane, "empleado no registrado");
             jTextFieldNombre.setText("");
@@ -1183,6 +1227,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             jTextFieldTotalPrestaciones.setText("0");
             jTextFieldCodigo.setText("");
         }else{
+            jTextFieldCodigo.setText(empleado.getId());
             jTextFieldNombre.setText(empleado.getNombre());
             jTextFieldApellido.setText(empleado.getApellido());
             jTextFieldSalario.setText(String.valueOf(empleado.getSalario()));
@@ -1191,6 +1236,8 @@ public class frmPrincipal extends javax.swing.JFrame {
             jCheckBoxAuxilioTransporte.setSelected(empleado.isAuxilioTransporte());
             jTextFieldTotalNomina.setText("0");
             jTextFieldTotalPrestaciones.setText("0");
+            jTextFieldCodigo.setEditable(false);
+            jTextFieldCedula.setEditable(false);
         }
     }//GEN-LAST:event_jButtonConsultarActionPerformed
 
@@ -1233,6 +1280,31 @@ public class frmPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
        
     }//GEN-LAST:event_jButtonProcesarActionPerformed
+
+    private void jButtonLimpiarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarCamposActionPerformed
+        // TODO add your handling code here:
+        jTextFieldCodigo.setText("");
+        jTextFieldCedula.setText("");
+        jTextFieldNombre.setText("");
+        jTextFieldApellido.setText("");
+        jTextFieldSalario.setText("");
+        jTextFieldHoraExtra.setText("");
+        jTextFieldCodigo.setEditable(true);
+        jTextFieldCedula.setEditable(true);
+    }//GEN-LAST:event_jButtonLimpiarCamposActionPerformed
+
+    private void jButtonLimpiarCamposEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarCamposEditarActionPerformed
+        // TODO add your handling code here:
+        jTextFieldCodigoEditar.setText("");
+        jTextFieldCedulaEditar.setText("");
+        jTextFieldNombreEditar.setText("");
+        jTextFieldApellidoEditar.setText("");
+        jTextFieldSalarioEditar.setText("");
+        jTextFieldHoraExtraEditar.setText("");
+        jTextFieldCodigoEditar.setEditable(true);
+        jTextFieldCedulaEditar.setEditable(true);
+        
+    }//GEN-LAST:event_jButtonLimpiarCamposEditarActionPerformed
     
     // listado de empelados
     private void listaEmpleado(){
@@ -1288,6 +1360,8 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonGenerarNomina;
     private javax.swing.JButton jButtonGenerarNomina1;
     private javax.swing.JButton jButtonGuardarCambios;
+    private javax.swing.JButton jButtonLimpiarCampos;
+    private javax.swing.JButton jButtonLimpiarCamposEditar;
     private javax.swing.JButton jButtonProcesar;
     private javax.swing.JCheckBox jCheckBoxAuxilioTransporte;
     private javax.swing.JCheckBox jCheckBoxAuxilioTransporteCrear;
